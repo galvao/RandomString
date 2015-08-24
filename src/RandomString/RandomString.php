@@ -1,4 +1,6 @@
 <?php
+namespace RandomString;
+
 /**
  * Generates a random string composed of numbers and/or (uppercase and/or lowercase)
  * letters and/or symbols based on ASCII codes.
