@@ -5,7 +5,6 @@
  *
  * @link https://github.com/galvao/RandomString
  * @author Er Galvão Abbott <galvao@galvao.eti.br>
- * @todo See if the problem of counting the characters twice can be solved
  * @todo See the possibility of improving the exclusion of rejected characters
  */
 
@@ -19,14 +18,14 @@ class RandomString
      * Single method, constructor.
      *
      * @param int $length Desired string's length
-     * @param array $allow Character "classes" to be allowed on the generated string
+     * @param array $allowed Character "classes" to be allowed on the generated string
      * @param array $rejected Characters to be rejected on generated string
-     * @throws \Exception If $allow - $rejected produces a 0 length array
+     * @throws \Exception If $allowed - $rejected produces a 0 length array
      */
 
     public function __construct(
         $length,
-        array $allow = array('upperCase', 'lowerCase', 'numbers', 'symbols'),
+        array $allowed  = array('upperCase', 'lowerCase', 'numbers', 'symbols'),
         array $rejected = array()
     ) {
         $n = 0;
@@ -40,7 +39,7 @@ class RandomString
         $numbers   = range(48, 57); // 0-9
         $symbols   = array_merge(range(32, 47), range(58, 64), range(91, 96), range(123, 126));
 
-        foreach ($allow as $class) {
+        foreach ($allowed as $class) {
             $this->characters = array_merge($this->characters, $$class);
         }
 
@@ -52,7 +51,7 @@ class RandomString
             $characterCount = count($this->characters);
             $rejectedCount  = count($rejected);
 
-            if ($characterCount > $rejectedCount) {
+            if (count($this->characters) > count($rejected)) {
                 $this->characters = array_diff($this->characters, $rejected);
             } elseif ($rejectedCount > $characterCount) {
                 $this->characters = array_diff($rejected, $this->characters);
