@@ -1,0 +1,23 @@
+{
+    "name": "galvao/RandomString",
+    "description": "A Random String generator based on character classes, with the possibility of excluding specific characters.",
+    "keywords": ["string", "randomization"],
+    "homepage": "https://github.com/galvao/RandomString",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Er Galvão Abbott",
+            "email": "galvao@galvao.eti.br",
+            "homepage": "http://www.galvao.eti.br/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": { 
+        "psr-4": {
+            "galvao\\RandomString\\": "src/RandomString" 
+        }
+    }
+}
