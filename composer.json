@@ -1,5 +1,5 @@
 {
-    "name": "galvao/RandomString",
+    "name": "galvao/random-string",
     "description": "A Random String generator based on character classes, with the possibility of excluding specific characters.",
     "keywords": ["string", "randomization"],
     "homepage": "https://github.com/galvao/RandomString",
